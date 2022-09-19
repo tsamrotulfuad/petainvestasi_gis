@@ -68,8 +68,8 @@
 <main class="form-signin w-100 m-auto">
     <form action="/login" method="POST">
         @csrf
-        
-        <h1 class="h3 mb-3 fw-normal">Masuk ke Si Oni</h1>
+        <img class="mb-4" src="{{ asset('logo/petasinoi.webp') }}" alt="" width="" height="85">
+        <!-- <h1 class="h3 mb-3 fw-normal">Masuk</h1> -->
 
         <div class="form-floating">
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
