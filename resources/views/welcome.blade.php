@@ -14,14 +14,11 @@
          <!-- favicon -->
         <link rel="icon" type="image/x-icon" href="{{ asset('logo/favicon.png') }}">
         <style>
-        #map {
-            width: 1366px;
-            height: 524px;
-        }
-
-        body {
+        html, body, #map {
+            width: 100%;
+            height: 100%;
             min-height: 10rem;
-            padding-top: 4.5rem;
+            padding-top: 2rem;
         }
 
         main > .container {
@@ -48,6 +45,9 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/batiklist">Info Potensi</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/petastatis">Peta Investasi</a>
+                    </li>
                 </ul>
             </div>
             </div>
@@ -55,11 +55,6 @@
         <!-- /navbar -->
         <div id="map">
         </div>
-        <footer class="footer mt-auto py-3 bg-light">
-            <div class="container">
-                <span class="text-muted">Si Oni | Peta Potensi Investasi. DPMPTSP Kota Pasuruan</span>
-            </div>
-        </footer>
         <script src="{{ asset('gis/js/qgis2web_expressions.js')}}"></script>
         <script src="{{ asset('gis/js/leaflet.js')}}"></script>
         <script src="{{ asset('gis/js/leaflet.rotatedMarker.js')}}"></script>
@@ -72,6 +67,7 @@
         <script src="{{ asset('gis/js/leaflet-control-geocoder.Geocoder.js')}}"></script>
         <script src="{{ asset('gis/data/ADMINISTRASI_AR_KECAMATAN_1.js')}}"></script>
         <script src="{{ asset('gis/data/Batik_2.js')}}"></script>
+        <script src="{{ asset('gis/data/Pelabuhan_3.js')}}"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
@@ -225,6 +221,50 @@
                 return L.marker(latlng, style_Batik_2_0(feature));
             },
         });
+        function pop_Pelabuhan_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['nama'] !== null ? autolinker.link(feature.properties['nama'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['web'] !== null ? autolinker.link(feature.properties['web'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Pelabuhan_3_0() {
+            return {
+                pane: 'pane_Pelabuhan_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: '{{ asset("gis/markers/red-marker.svg") }}',
+            iconSize: [38.0, 38.0]
+        }),
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Pelabuhan_3');
+        map.getPane('pane_Pelabuhan_3').style.zIndex = 403;
+        map.getPane('pane_Pelabuhan_3').style['mix-blend-mode'] = 'normal';
+        var layer_Pelabuhan_3 = new L.geoJson(json_Pelabuhan_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Pelabuhan_3',
+            layerName: 'layer_Pelabuhan_3',
+            pane: 'pane_Pelabuhan_3',
+            onEachFeature: pop_Pelabuhan_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_Pelabuhan_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Pelabuhan_3);
+        map.addLayer(layer_Pelabuhan_3);
         bounds_group.addLayer(layer_Batik_2);
         map.addLayer(layer_Batik_2);
         var osmGeocoder = new L.Control.Geocoder({

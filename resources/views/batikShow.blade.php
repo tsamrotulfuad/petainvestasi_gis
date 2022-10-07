@@ -85,6 +85,9 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/batiklist">Info Potensi</a>
                 </li>
+                <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/petastatis">Peta Investasi</a>
+                </li>
             </ul>
         </div>
         </div>
@@ -106,7 +109,7 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header">
-                        Informasi 
+                        Informasi
                     </div>
                     <div class="card-body">
                         <div class="mb-3">

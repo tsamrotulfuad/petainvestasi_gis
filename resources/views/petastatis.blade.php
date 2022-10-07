@@ -97,7 +97,7 @@
     <div class="container">
       <header>
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-          <h1 class="display-5 fw-normal">Daftar Batik</h1>
+          <h1 class="display-5 fw-normal">Daftar Peta Potensi Investasi</h1>
           <p class="fs-5 text-muted">Kota Pasuruan</p>
         </div>
       </header>
@@ -105,7 +105,15 @@
 
     <main>
       <div class="container">
-
+      <img src="{{ asset('gambar/gambar1.png') }}" class="img-fluid" alt="...">
+      <br>
+      <img src="{{ asset('gambar/gambar2.png') }}" class="img-fluid" alt="...">
+      <br>
+      <img src="{{ asset('gambar/gambar3.png') }}" class="img-fluid" alt="...">
+      <br>
+      <img src="{{ asset('gambar/gambar4.png') }}" class="img-fluid" alt="...">
+      <br>
+      <img src="{{ asset('gambar/gambar5.png') }}" class="img-fluid" alt="...">
       </div>
     </main>
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">

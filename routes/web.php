@@ -22,6 +22,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//peta statis
+Route::get('/petastatis', function () {
+    return view('petastatis');
+});
+
 // Akses Login & Logout
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -30,11 +35,11 @@ Route::get('/logout', [LoginController::class, 'logout']);
 // Akses url via slug
 Route::get('/batiklist', function () {
     $batikList = Batik::all();
-    return view('batikList', ['batiklist' => $batikList]); 
+    return view('batikList', ['batiklist' => $batikList]);
 })->name('batiklist');
 
 Route::get('/batiklist/{batik:slug}', function (Batik $batik) {
-    return view('batikShow', ['batikshow' => $batik]); 
+    return view('batikShow', ['batikshow' => $batik]);
 })->name('batikshow');
 
 //middleware masuk
@@ -45,7 +50,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::resource('batik', BatikController::class);
-  
+
 });
 
 

@@ -1,0 +1,1 @@
+var json_Pelabuhan_3 = {"type":"FeatureCollection","name":"Pelabuhan_3","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"nama":"Pelabuhan Kota Pasuruan","web":null},"geometry":{"type":"MultiPoint","coordinates":[[112.916579118180223,-7.633200025152703]]}}]}
