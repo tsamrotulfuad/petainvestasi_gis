@@ -6,6 +6,7 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars/">
         <link rel="stylesheet" href="{{ asset('gis/css/leaflet.css') }}">
         <link rel="stylesheet" href="{{ asset('gis/css/qgis2web.css') }}">
         <link rel="stylesheet" href="{{ asset('gis/css/fontawesome-all.min.css') }}">
@@ -29,24 +30,24 @@
     </head>
     <body>
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top bg-light">
+        <nav class="navbar navbar-expand-md fixed-top bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img class="mt-0" src="{{ asset('logo/kotapasuruan_dpmptsp.png') }}" alt="" height="45">
                 </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExample07">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarsExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">Peta Potensi</a>
+                        <a class="nav-link active" aria-current="page" href="/">Peta Potensi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/batiklist">Info Potensi</a>
+                        <a class="nav-link" href="/batiklist">Info Potensi</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="/petastatis">Peta Investasi</a>
+                        <a class="nav-link" href="/petastatis">Peta Investasi</a>
                     </li>
                 </ul>
             </div>
@@ -304,5 +305,7 @@
             resetLabels([layer_ADMINISTRASI_AR_KECAMATAN_1]);
         });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     </body>
 </html>
