@@ -11,7 +11,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">List Data Batik</h6>
                 <a href="{{ route('batik.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                     <i class="fas fa-plus fa-sm text-white-50"></i> Tambah data
-                </a>                
+                </a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -50,7 +50,7 @@
                                 <td>{{ $batik->produk }}</td>
                                 <td>{{ $batik->alamat_usaha }}</td>
                                 <td>{{ $batik->harga }}</td>
-                                <td><img src="{{ Storage::url('public/produks/').$batik->gambar_produk }}" class="rounded" style="width: 150px"></td>
+                                <td><img src="{{ Storage::url('public/produks/').$batik->gambar_produk }}" class="rounded" style="width: 150px; height: 150px; display: table-cell;"></td>
                                 <td>
                                 <form action="{{ route('batik.destroy',$batik->slug) }}" method="POST">
 
@@ -76,5 +76,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection

@@ -163,7 +163,7 @@
                                         <span class="font-weight-bold">A new monthly report is ready to download!</span>
                                     </div>
                                 </a> -->
-                                
+
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                             </div>
                         </li>
@@ -194,7 +194,7 @@
                                         <div class="small text-gray-500">Emily Fowler · 58m</div>
                                     </div>
                                 </a> -->
-                                
+
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                             </div>
                         </li>
@@ -281,7 +281,7 @@
         </div>
     </div>
 
-     <!-- Custome JS -->
+     <!-- Custom JS -->
     <script type="text/javascript">
 
         function previewImage() {

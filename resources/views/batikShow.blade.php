@@ -99,7 +99,7 @@
                         Gambar Produk
                     </div>
                     <div class="card-body">
-                        <img class="img-fluid" src="{{ Storage::url('public/produks/').$batikshow->gambar_produk }}" width="512px">
+                        <img class="img-fluid" src="{{ Storage::url('public/produks/').$batikshow->gambar_produk }}" style="width: 150px; height: 150px; display: table-cell;">
                     </div>
                 </div>
             </div>
