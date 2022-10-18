@@ -84,9 +84,6 @@
                         <a class="nav-link" aria-current="page" href="/">Peta Potensi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/batiklist">Info Potensi</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/petastatis">Peta Investasi</a>
                     </li>
                 </ul>

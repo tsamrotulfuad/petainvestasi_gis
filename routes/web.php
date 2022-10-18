@@ -33,10 +33,6 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
 // Akses url via slug
-Route::get('/batiklist', function () {
-    $batikList = Batik::all();
-    return view('batikList', ['batiklist' => $batikList]);
-})->name('batiklist');
 
 Route::get('/batiklist/{batik:slug}', function (Batik $batik) {
     return view('batikShow', ['batikshow' => $batik]);
