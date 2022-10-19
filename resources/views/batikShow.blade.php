@@ -99,7 +99,7 @@
                         Gambar Produk
                     </div>
                     <div class="card-body">
-                        <img class="img-fluid" src="{{ Storage::url('public/produks/').$batikshow->gambar_produk }}" style="width: 150px; height: 150px; display: table-cell;">
+                        <img class="img-fluid" src="{{ Storage::url('public/produks/').$batikshow->gambar_produk }}" style="width: 450px; height: 450px; display: table-cell;">
                     </div>
                 </div>
             </div>
@@ -140,6 +140,7 @@
     </div>
     <!-- /content -->
     <!-- footer -->
+    <div class="container">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
                 <p class="col-md-4 mb-0 text-muted">&copy; 2022 Peta SiOni</p>
 
@@ -148,6 +149,7 @@
                 </a>
 
             </footer>
+    </div>
     <!-- /footer -->
     <!-- JS Add Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
