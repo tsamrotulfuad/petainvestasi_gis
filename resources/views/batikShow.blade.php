@@ -12,7 +12,7 @@
         /* Show it is fixed to the top */
         body {
         min-height: 50rem;
-        padding-top: 4.5rem;
+        padding-top: 5.5rem;
         }
 
         .bd-placeholder-img {
@@ -65,6 +65,23 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+        /* CUSTOMIZE THE CAROUSEL
+        -------------------------------------------------- */
+
+        /* Carousel base class */
+        .carousel {
+        margin-bottom: 2rem;
+        }
+        /* Since positioning the image, we need to help out the caption */
+        .carousel-caption {
+        bottom: 3rem;
+        z-index: 10;
+        }
+
+        /* Declare heights because of positioning of img element */
+        .carousel-item {
+        height: 32rem;
+        }
     </style>
 </head>
 <body>
@@ -92,46 +109,74 @@
         <!-- /navbar -->
     <!-- content -->
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-header">
-                        Gambar Produk
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="bd-placeholder-img" src="{{ Storage::url('public/produks/').$batikshow->gambar_produk }}" style="width: 100%; height: 100%;">
+                    <div class="container">
+                    <div class="carousel-caption">
+                        <h2>{{ $batikshow->nama_usaha }}</h2>
+                        <h1>Harga Mulai dari Rp. {{ $batikshow->harga }}</h1>
                     </div>
-                    <div class="card-body">
-                        <img class="img-fluid" src="{{ Storage::url('public/produks/').$batikshow->gambar_produk }}" style="width: 450px; height: 450px; display: table-cell;">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="bd-placeholder-img" src="{{ Storage::url('public/produks/').$batikshow->gambar_produk2 }}" style="width: 100%; height: 100%;">
+                    <div class="container">
+                    <div class="carousel-caption">
+                        <h2>{{ $batikshow->nama_usaha }}</h2>
+                        <h1>Harga Mulai dari Rp. {{ $batikshow->harga }}</h1>
+                    </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
                 <div class="card">
-                    <div class="card-header">
-                        Informasi
+                    <div class="card-header text-center">
+                        <h3>Informasi</h3>
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="nama_usaha" class="form-label">Nama Usaha</label>
-                            <input type="text" class="form-control" id="nama_usaha" value="{{ $batikshow->nama_usaha }}" disabled>
+                            <h5 class="card-title">{{ $batikshow->nama_usaha }}</h5>
                         </div>
                         <div class="mb-3">
                             <label for="alamat_usaha" class="form-label">Alamat Usaha</label>
-                            <input type="text" class="form-control" id="alamat_usaha" value="{{ $batikshow->alamat_usaha }}" disabled>
+                            <h5 class="card-title">{{ $batikshow->alamat_usaha }}</h5>
                         </div>
                         <div class="mb-3">
                             <label for="alamat_usaha" class="form-label">Produk Usaha</label>
-                            <input type="text" class="form-control" id="alamat_usaha" value="{{ $batikshow->produk }}" disabled>
+                            <h5 class="card-title">{{ $batikshow->produk }}</h5>
                         </div>
                         <div class="mb-3">
                             <label for="alamat_usaha" class="form-label">Harga Mulai Produk</label>
-                            <input type="text" class="form-control" id="alamat_usaha" value="Rp. {{ $batikshow->harga }}" disabled>
+                            <h5 class="card-title">Rp. {{ $batikshow->harga }}</h5>
                         </div>
                         <div class="mb-3">
                             <label for="alamat_usaha" class="form-label">Kontak</label>
-                            <input type="text" class="form-control" id="alamat_usaha" value="{{ $batikshow->kontak }}" disabled>
+                            <h5 class="card-title">{{ $batikshow->kontak }}</h5>
                         </div>
                         <div class="mb-3">
                             <label for="alamat_usaha" class="form-label">Website</label>
-                            <input type="text" class="form-control" id="alamat_usaha" value="{{ $batikshow->website }}" disabled>
+                            <h5 class="card-title">{{ $batikshow->website }}</h5>
+                        </div>
+                        <div class="mb-3">
+                            <label for="alamat_usaha" class="form-label">Deskripsi</label>
+                            <h5 class="card-title">{{ $batikshow->deskripsi_produk }}</h5>
                         </div>
                     </div>
                 </div>

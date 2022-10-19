@@ -10,8 +10,8 @@ class Batik extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama_pemilik', 
-        'nama_usaha', 
+        'nama_pemilik',
+        'nama_usaha',
         'slug',
         'nib',
         'alamat_usaha',
@@ -20,8 +20,10 @@ class Batik extends Model
         'jumlah_karyawan',
         'harga',
         'gambar_produk',
+        'gambar_produk2',
         'kontak',
         'website',
+        'deskripsi_produk',
     ];
 
     public function getRouteKeyName()

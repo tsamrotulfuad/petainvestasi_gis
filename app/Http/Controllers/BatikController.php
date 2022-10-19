@@ -43,6 +43,10 @@ class BatikController extends Controller
         $gambar = $request->file('gambar_produk');
         $gambar->storeAs('public/produks/', $gambar->hashName());
 
+        //Upload Gambar
+        $gambar2 = $request->file('gambar_produk2');
+        $gambar2->storeAs('public/produks/', $gambar2->hashName());
+
         $batik = Batik::create([
             'nama_pemilik'       => $request->nama_pemilik,
             'nama_usaha'         => $request->nama_usaha,
@@ -54,8 +58,10 @@ class BatikController extends Controller
             'jumlah_karyawan'    => $request->jumlah_karyawan,
             'harga'              => $request->harga,
             'gambar_produk'      => $gambar->hashName(),
+            'gambar_produk2'     => $gambar2->hashName(),
             'kontak'             => $request->kontak,
             'website'            => $request->website,
+            'deskripsi_produk'   => $request->deskripsi_produk,
         ]);
 
         if($batik){
@@ -100,7 +106,7 @@ class BatikController extends Controller
     {
         $batik = Batik::findOrFail($batik->id);
 
-        if($request->file('gambar_produk') == "") {
+        if($request->file('gambar_produk') == "" || $request->file('gambar_produk2') == "") {
             $batik->update([
                 'nama_pemilik'       => $request->nama_pemilik,
                 'nama_usaha'         => $request->nama_usaha,
@@ -113,14 +119,19 @@ class BatikController extends Controller
                 'harga'              => $request->harga,
                 'kontak'             => $request->kontak,
                 'website'            => $request->website,
+                'deskripsi_produk'   => $request->deskripsi_produk,
             ]);
         } else {
             //Hapus gambar lama
             Storage::disk('local')->delete('public/produks/'.$batik->gambar_produk);
+            Storage::disk('local')->delete('public/produks/'.$batik->gambar_produk2);
 
             //upload gambar baru
             $gambar = $request->file('gambar_produk');
             $gambar->storeAs('public/produks', $gambar->hashName());
+
+            $gambar2 = $request->file('gambar_produk2');
+            $gambar2->storeAs('public/produks', $gambar2->hashName());
 
             $batik->update([
                 'nama_pemilik'       => $request->nama_pemilik,
@@ -133,8 +144,10 @@ class BatikController extends Controller
                 'jumlah_karyawan'    => $request->jumlah_karyawan,
                 'harga'              => $request->harga,
                 'gambar_produk'      => $gambar->hashName(),
+                'gambar_produk2'     => $gambar2->hashName(),
                 'kontak'             => $request->kontak,
                 'website'            => $request->website,
+                'deskripsi_produk'   => $request->deskripsi_produk,
             ]);
         }
         if($batik){
@@ -156,6 +169,7 @@ class BatikController extends Controller
     {
         $del_batik = Batik::findOrFail($batik->id);
         Storage::disk('local')->delete('public/produks/'.$batik->gambar_produk);
+        Storage::disk('local')->delete('public/produks/'.$batik->gambar_produk2);
         $del_batik->delete();
 
         return redirect()->route('batik.index');

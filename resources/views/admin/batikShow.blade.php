@@ -51,6 +51,10 @@
                                     <img class="img-preview img-fluid mt-3 col-sm-5 d-block" src="{{ Storage::url('public/produks/').$batik->gambar_produk }}">
                                 </div>
                                 <div class="mb-3">
+                                    <label for="gambar_produk2" class="form-label">Gambar Produk 2</label>
+                                    <img class="img-preview2 img-fluid mt-3 col-sm-5 d-block" src="{{ Storage::url('public/produks/').$batik->gambar_produk2 }}">
+                                </div>
+                                <div class="mb-3">
                                     <label for="kontak" class="form-label">Kontak</label>
                                     <input type="text" class="form-control" name="kontak" id="kontak" value="{{ $batik->kontak }}">
                                 </div>

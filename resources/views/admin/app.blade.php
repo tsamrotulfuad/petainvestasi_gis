@@ -297,6 +297,19 @@
                 imgPreview.src = oFREvent.target.result;
             }
         }
+        function previewImage2() {
+            const image2 = document.querySelector('#gambar_produk2');
+            const imgPreview2 = document.querySelector('.img-preview2');
+
+            imgPreview2.style.display = 'block';
+
+            const oFReader2 = new FileReader();
+            oFReader2.readAsDataURL(image2.files[0]);
+
+            oFReader2.onload = function(oFREvent) {
+                imgPreview2.src = oFREvent.target.result;
+            }
+        }
     </script>
 
     <!-- Bootstrap core JavaScript-->

@@ -37,7 +37,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label for="deskripsi_produk" class="form-label">Alamat Usaha</label>
+                                            <label for="alamat_usaha" class="form-label">Alamat Usaha</label>
                                             <div class="form-floating">
                                             <textarea class="form-control" name="alamat_usaha" placeholder="Alamat Usaha" id="alamat_usaha" style="height: 100px"></textarea>
                                             </div>
@@ -72,10 +72,21 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="gambar_produk" class="form-label">Gambar Produk</label>
-                                    <input type="file" class="form-control" name="gambar_produk" id="gambar_produk" placeholder="Masukkan Gambar Produk" onchange="previewImage()">
-                                    <img class="img-preview img-fluid mt-3 col-sm-5">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label for="gambar_produk" class="form-label">Gambar Produk 1</label>
+                                            <input type="file" class="form-control" name="gambar_produk" id="gambar_produk" placeholder="Masukkan Gambar Produk 2" onchange="previewImage()">
+                                            <img class="img-preview img-fluid mt-3 col-sm-5">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label for="gambar_produk2" class="form-label">Gambar Produk 2</label>
+                                            <input type="file" class="form-control" name="gambar_produk2" id="gambar_produk2" placeholder="Masukkan Gambar Produk 2" onchange="previewImage2()">
+                                            <img class="img-preview2 img-fluid mt-3 col-sm-5">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
@@ -91,6 +102,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label for="deskripsi_produk" class="form-label">Deskripsi Produk</label>
+                                            <div class="form-floating">
+                                            <textarea class="form-control" name="deskripsi_produk" placeholder="Deskripsi Produk" id="deskripsi_produk" style="height: 100px"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>
                         </div>
@@ -100,4 +121,4 @@
     </div>
 @endsection
 
- 
+

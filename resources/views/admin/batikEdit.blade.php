@@ -79,12 +79,32 @@
                                         @enderror
                                 </div>
                                 <div class="mb-3">
+                                    <label for="gambar_produk2" class="form-label">Gambar Produk 2</label>
+                                    <input type="file" class="form-control @error('gambar_produk2') is-invalid @enderror" name="gambar_produk2" id="gambar_produk2" onchange="previewImage2()">
+                                    @if ($batik->gambar_produk2)
+                                        <img class="img-preview2 img-fluid mt-3 col-sm-5 d-block" src="{{ Storage::url('public/produks/').$batik->gambar_produk2 }}">
+                                    @else
+                                        <img class="img-preview2 img-fluid mt-5 col-sm-5">
+                                    @endif
+                                        @error('gambar_produk2')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </div>
+                                <div class="mb-3">
                                     <label for="kontak" class="form-label">Kontak</label>
                                     <input type="text" class="form-control" name="kontak" id="kontak" value="{{ $batik->kontak }}" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="website" class="form-label">Website</label>
                                     <input type="text" class="form-control" name="website" id="website" value="{{ $batik->website }}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="deskripsi_produk" class="form-label">Deskripsi Produk</label>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" name="deskripsi_produk" id="deskripsi_produk" style="height: 100px">{{ $batik->deskripsi_produk }}</textarea>
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                 <a class="btn btn-secondary" href="{{ route('batik.index') }}">Kembali</a>
